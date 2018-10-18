@@ -9,15 +9,15 @@ public sealed partial class Solution
             return 0;
         }
 
-        var j = 0;
-        for (var i = 1; i < nums.Length; i++)
+        var lastValidIndex = 0;
+        for (var currentIndex = 1; currentIndex < nums.Length; currentIndex++)
         {
-            if (nums[i] > nums[j])
+            if (nums[currentIndex] > nums[lastValidIndex])
             {
-                nums[++j] = nums[i];
+                nums[++lastValidIndex] = nums[currentIndex];
             }
         }
 
-        return j + 1;
+        return lastValidIndex + 1;
     }
 }
